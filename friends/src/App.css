@@ -1,11 +1,6 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,20 +8,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +18,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav-bar {
+
+  display: flex;
+  flex-direction: row-reverse;
+  background: #b5c0d1;
+  /* padding:1% */
+}
+.nav-bar a {
+  text-decoration:none;
+  width: 20%;
+  padding: 1%;
+  color:white;
+  font-size:1.2rem;
+  font-weight:500;
+  background: rgb(180, 194, 146);
+ 
+}
+.nav-bar a :hover{
+  background: #aae658;
+}
+.friends-list {
+  border:solid green;
+  display: flex;
+  flex-wrap: wrap;
+}
+.friend-card{
+  width:29%;
+  padding:1%;
+  margin:1%;
+  border: 1px solid #e6d9d9;
+  border-radius:10px
 }

@@ -5,20 +5,20 @@ import {Route,Redirect} from 'react-router-dom'
 export const PrivateRoute = ({component: Component, ...rest})=>{
 
     return(
-        <div>
-            <Route 
-            {...rest}
+        
+            <Route {...rest}
             render={props=>{
                 if(localStorage.getItem('token')){
                     return <Component {...props}/>;
-                }else{
+                }
+                else{
                     return <Redirect to = '/login'/>
                 }
             }}
-            >
+            />
 
-            </Route>
-        </div>
+            
+       
     )
 
 }

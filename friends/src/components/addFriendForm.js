@@ -1,6 +1,7 @@
 import React,{useContext, useState} from 'react'
 import {GlobalContext} from '../contexts/globalContext'
 
+
 const FriendForm=(props)=>{
     
     // const{addNewFriend}=useContext(GlobalContext)
@@ -37,19 +38,19 @@ const FriendForm=(props)=>{
                         <input 
                         type='text' 
                         name='name' 
-                        placholder = 'name' 
+                        placeholder = 'Name' 
                         onChange={handleChange} 
                         value={friend.name}/>
                           <input 
                         type='text' 
                         name='age' 
-                        placholder = 'age' 
+                        placeholder = 'Age' 
                         onChange={handleChange} 
                         value={friend.age}/>
                         <input 
                         type='text' 
                         name='email' 
-                        placholder = 'email' 
+                        placeholder = 'Email' 
                         onChange={handleChange} 
                         value={friend.email}/>
 

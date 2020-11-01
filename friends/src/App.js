@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {GlobalContext} from './contexts/globalContext'
 import './App.css';
-import {Route,Link} from 'react-router-dom'
+import {Route,Link,Switch} from 'react-router-dom'
 
 //components
 import FriendForm from './components/addFriendForm'
@@ -15,23 +15,6 @@ import {PrivateRoute} from './utils/privateRoute'
 
 function App() {
  
-  const[friends,setFriends] =useState([{name:'simo',age:11,email:'12@yaho.fr'}])
- 
-console.log('friends in App ',friends)
-  const addNewFriend = e=>{
-    // e.preventDefault();
-    console.log('add new friend called ')
-    let newFriend = {
-        id:Date.now(),
-        name: e.name,
-        age: e.age,
-        email: e.email
-    }
-setFriends([...friends,newFriend])
-
-}
-
-
 
   return (
     <div className="App">
@@ -40,15 +23,12 @@ setFriends([...friends,newFriend])
         <Link to = '/protected'>Dashboard</Link>
 
       </div>
-      <Route exact path='/login'>
-         <Login />
-      </Route>
-       
-        <PrivateRoute path='/protected'>
-          <FriendsList friends={friends} addNewFriend={addNewFriend}/>
-        </PrivateRoute>
+      <Switch>
+        <Route path='/login' component={Login}/>
         
-     
+        
+        <PrivateRoute exact path='/protected' component={FriendsList}/>
+      </Switch>
     
     </div>
   );
